@@ -4,7 +4,7 @@
 
 从 [Releases 下载 0.2.1](https://github.com/btlstar/ZhangxinPlus/releases/tag/v0.2.1)，完整解压 `ZhangxinPlus-0.2.1-windows-x64.zip` 后运行 `ZhangxinPlus.exe`。随包包含运行依赖，完整解压后即可使用。
 
-本版以预发布版形式提供。独立窗口的「安装 / 更新 → 还原游戏文件 → 安装 / 更新」已通过用户实测，附带 ZIP 的 SHA-256 校验文件。
+本版以预发布版形式提供，附带 ZIP 的 SHA-256 校验文件。
 
 ## 使用
 
@@ -39,10 +39,8 @@
 
 不要用来自另一个游戏目录的恢复记录覆盖当前安装。工具遇到无法核验的文件会停止并显示原因。
 
-## 源码与构建
+## 从源码运行
 
-Python 3.12、Windows x64。安装 `requirements-build.txt` 后运行 `python package.py`。依赖锁定见 `requirements-lock.txt`；构建产物在 `dist`。
+使用 Python 3.12 安装 `requirements.txt` 后运行 `python gui.py`。构建 Windows x64 便携包时安装 `requirements-build.txt`，再运行 `python package.py`；依赖锁定见 `requirements-lock.txt`。
 
-开发检查：`python -m unittest test_manage test_service test_gui`。如需检查客户端实际 Lua，再运行 `python test_lua.py <游戏目录> --staged <暂存资源目录>`；该检查使用本机游戏库，不分发游戏资源。
-
-源码和发布包不包含游戏资源、账号、登录资料、私有配置、证书、对局记录或原始备份。许可为 Apache-2.0，见 [LICENSE.txt](LICENSE.txt)。第三方组件许可随便携包提供。
+许可为 Apache-2.0，见 [LICENSE.txt](LICENSE.txt)。第三方组件许可随便携包提供。
