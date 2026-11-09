@@ -42,7 +42,7 @@ class Application(ttk.Frame):
         ttk.Label(self, textvariable=self.backup, wraplength=660, foreground="#666666").pack(anchor="w")
         self.open_backup = ttk.Button(self, text="打开备份目录", command=self.show_backup, state="disabled")
         self.open_backup.pack(anchor="w", pady=(10, 0))
-        ttk.Label(self, text="独立装扮功能不需要 AkagiPlus、Proxifier 或管理员常驻。AI 请使用 AkagiPlus。", wraplength=660, foreground="#666666").pack(anchor="w", pady=(24, 0))
+        ttk.Label(self, text="安装后在游戏原有界面选择装扮；本地选择按游戏账号保存。", wraplength=660, foreground="#666666").pack(anchor="w", pady=(24, 0))
         master.protocol("WM_DELETE_WINDOW", self.close)
         self.after(100, self.receive)
         if self.game.get():

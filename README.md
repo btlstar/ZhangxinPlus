@@ -1,8 +1,8 @@
 # ZhangxinPlus · 掌心 Plus
 
-掌心麻将 Windows 客户端的本地装扮插件与独立图形管理工具。工具 **0.2.0** 沿用已实测的插件核心 **0.1.5**，适配官方资源 **92217**。
+掌心麻将 Windows 客户端的本地装扮插件与独立图形管理工具。工具 **0.2.1** 沿用已实测的插件核心 **0.1.5**，适配官方资源 **92217**。
 
-从 [Releases 下载 0.2.0](https://github.com/btlstar/ZhangxinPlus/releases/tag/v0.2.0)，完整解压 `ZhangxinPlus-0.2.0-windows-x64.zip` 后运行 `ZhangxinPlus.exe`。不需要另装 Python、AkagiPlus 或 Proxifier。
+从 [Releases 下载 0.2.1](https://github.com/btlstar/ZhangxinPlus/releases/tag/v0.2.1)，完整解压 `ZhangxinPlus-0.2.1-windows-x64.zip` 后运行 `ZhangxinPlus.exe`。随包包含运行依赖，完整解压后即可使用。
 
 本版以预发布版形式提供。独立窗口的「安装 / 更新 → 还原游戏文件 → 安装 / 更新」已通过用户实测，附带 ZIP 的 SHA-256 校验文件。
 
@@ -24,18 +24,16 @@
 
 只改变本机显示，不增加服务器拥有物、货币、抽取、赠礼或真实养成进度；不保证他人视角可见。头像与语音仍未完整适配。官方更新后可能需要重新适配。
 
-## 与 AkagiPlus 共用
+## 独立使用与版本
 
-工具会自动复用与所选游戏目录匹配的 AkagiPlus 恢复记录；不同安装目录使用独立备份。不要删除备份，直到已完成还原。已有 AkagiPlus 用户无需先还原再重复安装。
+工具提供游戏目录选择、状态检查、安装更新与还原。安装后直接从游戏原有界面选择装扮。
 
-工具版本与插件核心版本独立计数。0.2.0 没有修改 0.1.5 Lua 核心，保持与 AkagiPlus `v3.8.0-plus.2` 的资源核验兼容。
-
-AI 需要使用 [AkagiPlus](https://github.com/btlstar/AkagiPlus/releases/tag/v3.8.0-plus.2)。已实测普通立直友人局三麻、四麻；其他玩法、中途恢复及自动操作尚未支持。独立工具只管理装扮插件，不包含 AI 界面或服务。
+工具与插件核心分别管理版本。0.2.1 更新项目介绍和窗口说明，继续使用已验证的 0.1.5 插件核心，适配资源 92217。
 
 ## 配置与恢复
 
 - 工具只在 `%LOCALAPPDATA%/ZhangxinPlus/gui.json` 记住所选游戏目录。
-- 备份优先复用匹配的 `%APPDATA%/akagiplus/zhangxinplus` 或旧独立版记录；新安装使用 `%LOCALAPPDATA%/ZhangxinPlus/installs/<安装标识>`。
+- 自动复用与所选游戏目录匹配的既有恢复记录；新安装使用 `%LOCALAPPDATA%/ZhangxinPlus/installs/<安装标识>`。
 - 窗口显示本次备份位置，并提供打开目录按钮。
 - 本地装扮选择保存在游戏本地数据中；还原脚本不会清除这些选择。
 
