@@ -2,7 +2,9 @@
 
 掌心麻将 Windows 客户端的本地装扮插件与独立图形管理工具。工具 **0.2.0** 沿用已实测的插件核心 **0.1.5**，适配官方资源 **92217**。
 
-本地候选版正在准备发布；GitHub Release 尚未发布。完整解压便携包后运行 `ZhangxinPlus.exe`，不需要另装 Python、AkagiPlus 或 Proxifier。
+从 [Releases 下载 0.2.0](https://github.com/btlstar/ZhangxinPlus/releases/tag/v0.2.0)，完整解压 `ZhangxinPlus-0.2.0-windows-x64.zip` 后运行 `ZhangxinPlus.exe`。不需要另装 Python、AkagiPlus 或 Proxifier。
+
+本版以预发布版形式提供。独立窗口的「安装 / 更新 → 还原游戏文件 → 安装 / 更新」已通过用户实测，附带 ZIP 的 SHA-256 校验文件。
 
 ## 使用
 
