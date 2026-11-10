@@ -17,11 +17,11 @@ class Application(ttk.Frame):
         self.busy = False
         self.state_dir = None
         self.game = tk.StringVar(value=service.load_game())
-        self.status = tk.StringVar(value="请选择掌心安装目录，然后查看状态。")
+        self.status = tk.StringVar(value="请选择掌心全民麻将安装目录，然后查看状态。")
         self.backup = tk.StringVar(value="安装前自动备份；还原时保留本地装扮选择。")
         ttk.Label(self, text="掌心 Plus", font=("Microsoft YaHei UI", 22, "bold")).pack(anchor="w")
         ttk.Label(self, text=f"ZhangxinPlus {TOOL_VERSION}  ·  插件核心 {CORE_VERSION}  ·  资源 92217").pack(anchor="w", pady=(4, 24))
-        ttk.Label(self, text="掌心安装目录（包含 zhangxinmj.exe）").pack(anchor="w")
+        ttk.Label(self, text="掌心全民麻将安装目录（包含 zhangxinmj.exe）").pack(anchor="w")
         row = ttk.Frame(self); row.pack(fill="x", pady=(8, 20))
         self.entry = ttk.Entry(row, textvariable=self.game)
         self.entry.pack(side="left", fill="x", expand=True, ipady=4)
@@ -38,7 +38,7 @@ class Application(ttk.Frame):
             button = ttk.Button(actions, text=label, command=lambda a=action: self.start(a))
             button.pack(side="left", padx=(0, 12), ipadx=10, ipady=5)
             self.buttons.append(button)
-        ttk.Label(self, text="完成官方资源更新并退出游戏后再安装。安装后正常启动掌心，在游戏原有界面选择装扮。", wraplength=660).pack(anchor="w", pady=(0, 12))
+        ttk.Label(self, text="完成官方资源更新并退出游戏后再安装。安装后正常启动掌心全民麻将，在游戏原有界面选择装扮。", wraplength=660).pack(anchor="w", pady=(0, 12))
         ttk.Label(self, textvariable=self.backup, wraplength=660, foreground="#666666").pack(anchor="w")
         self.open_backup = ttk.Button(self, text="打开备份目录", command=self.show_backup, state="disabled")
         self.open_backup.pack(anchor="w", pady=(10, 0))
@@ -49,7 +49,7 @@ class Application(ttk.Frame):
             self.after(200, lambda: self.start("status"))
 
     def browse(self):
-        value = filedialog.askdirectory(parent=self, title="选择掌心安装目录", initialdir=self.game.get() or None)
+        value = filedialog.askdirectory(parent=self, title="选择掌心全民麻将安装目录", initialdir=self.game.get() or None)
         if value:
             self.game.set(value)
             self.start("status")
@@ -58,7 +58,7 @@ class Application(ttk.Frame):
         if self.busy:
             return
         if not self.game.get().strip():
-            self.status.set("请先选择掌心安装目录。")
+            self.status.set("请先选择掌心全民麻将安装目录。")
             return
         self.busy = True
         for widget in self.buttons + [self.browse_button, self.entry, self.open_backup]:
