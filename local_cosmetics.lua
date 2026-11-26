@@ -1,7 +1,7 @@
--- ZhangxinPlus: local cosmetic plugin, reviewed resource baseline 92217.
+-- ZhangxinPlus: local cosmetic plugin, reviewed resource baselines 92217 / 92318.
 -- Cosmetic selections stay on this computer, separately for each game UID.
 if _G.ZhangxinPlus then return _G.ZhangxinPlus end
-local A = {version='0.1.5', states={}, reads=0, writes=0, instance=tostring(os.time())..'-'..tostring(os.clock())}
+local A = {version='0.1.7', states={}, reads=0, writes=0, instance=tostring(os.time())..'-'..tostring(os.clock())}
 local function copy(v)
     if type(v)~='table' then return v end
     local t={};for k,x in pairs(v) do t[k]=copy(x) end;return t
@@ -47,9 +47,14 @@ local aliases={
     ['backpack/deleteEquipSuit']='backpack/removeEquipSuit',
 }
 local function route(url) return aliases[url] or url end
+local function resourceVersion()
+    local ok,value=pcall(function() return System.IO.File.ReadAllText(csharp.Util.DataPath..'/version_num.txt') end)
+    if ok and type(value)=='string' then return (value:gsub('%s+','')) end
+    return 'unknown'
+end
 local function report(lastRoute)
     pcall(function()
-        local value={plugin='ZhangxinPlus',version=A.version,resource_version='92217',loaded=true,reads=A.reads,writes=A.writes,last_route=lastRoute,ai_frames=A.aiSeq or 0,ai_error=A.aiError,last_error=A.lastError,scheme_id_type=A.schemeIdType}
+        local value={plugin='ZhangxinPlus',version=A.version,resource_version=resourceVersion(),loaded=true,reads=A.reads,writes=A.writes,last_route=lastRoute,ai_frames=A.aiSeq or 0,ai_error=A.aiError,last_error=A.lastError,scheme_id_type=A.schemeIdType}
         System.IO.File.WriteAllText(csharp.Util.DataPath..'/zhangxinplus-status.json',Json.encode(value))
     end)
 end
@@ -60,6 +65,9 @@ end
 local function validSkin(role,skin)
     local c=config('role_skin_config')[skin]
     return validRole(role) and (skin==0 or (c and c.role_id==role))
+end
+function A.canPreviewAwakening(role)
+    return type(role)=='table' and role.isOwn == true and validRole(role.roleID)
 end
 local function overlay(v,r,wire)
     if not r then return end
@@ -438,7 +446,7 @@ function A.install(http)
         end,params,...)
     end
     A.installEmoji()
-    report('loaded');print('[ZhangxinPlus] loaded '..A.version..' / resources 92217')
+    report('loaded');print('[ZhangxinPlus] loaded '..A.version..' / resources '..resourceVersion())
 end
 _G.ZhangxinPlus=A
 return A

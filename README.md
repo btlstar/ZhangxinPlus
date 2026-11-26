@@ -1,8 +1,8 @@
 # ZhangxinPlus · 掌心 Plus
 
-掌心全民麻将 Windows 客户端的本地装扮插件与独立图形管理工具。管理工具版本为 **0.2.2**，装扮核心为 **0.1.5**，适配官方资源 **92217**。
+掌心全民麻将 Windows 客户端的本地装扮插件与独立图形管理工具。管理工具版本为 **0.2.3**，装扮核心为 **0.1.6**，适配官方资源 **92217 / 92318**。
 
-从 [Releases 下载 0.2.2](https://github.com/btlstar/ZhangxinPlus/releases/tag/v0.2.2)，完整解压 `ZhangxinPlus-0.2.2-windows-x64.zip` 后运行 `ZhangxinPlus.exe`。随包包含运行依赖，完整解压后即可使用。
+从 [Releases](https://github.com/btlstar/ZhangxinPlus/releases) 下载所需版本，完整解压下载的 ZIP 后运行 `ZhangxinPlus.exe`。随包包含运行依赖，完整解压后即可使用。
 
 本版以预发布版形式提供，附带 ZIP 的 SHA-256 校验文件。
 

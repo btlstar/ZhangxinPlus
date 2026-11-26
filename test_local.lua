@@ -23,6 +23,9 @@ local files={};local appended
 csharp.Util={DataPath='synthetic'}
 System={IO={File={Exists=function(path)return files[path]~=nil end,ReadAllText=function(path)return files[path]end,
     WriteAllText=function(path,data)files[path]=data end,AppendAllText=function(path,data)appended=data end}}}
+files['synthetic/version_num.txt']='92318\r\n'
+A.install({MjGamePost=function()end})
+assert(Json.decode(files['synthetic/zhangxinplus-status.json']).resource_version=='92318','runtime reports the actual resource version')
 local control='synthetic/zhangxinplus-ai-control.json'
 files[control]=Json.encode({enabled=true,session='test',expires=os.time()+15})
 A.forwardAI({cmd='cmd_game_start',data={game_mode=0}})

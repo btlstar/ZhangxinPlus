@@ -20,7 +20,7 @@ class Application(ttk.Frame):
         self.status = tk.StringVar(value="请选择掌心全民麻将安装目录，然后查看状态。")
         self.backup = tk.StringVar(value="安装前自动备份；还原时保留本地装扮选择。")
         ttk.Label(self, text="掌心 Plus", font=("Microsoft YaHei UI", 22, "bold")).pack(anchor="w")
-        ttk.Label(self, text=f"ZhangxinPlus {TOOL_VERSION}  ·  插件核心 {CORE_VERSION}  ·  资源 92217").pack(anchor="w", pady=(4, 24))
+        ttk.Label(self, text=f"ZhangxinPlus {TOOL_VERSION}  ·  插件核心 {CORE_VERSION}  ·  资源 92217 / 92318").pack(anchor="w", pady=(4, 24))
         ttk.Label(self, text="掌心全民麻将安装目录（包含 zhangxinmj.exe）").pack(anchor="w")
         row = ttk.Frame(self); row.pack(fill="x", pady=(8, 20))
         self.entry = ttk.Entry(row, textvariable=self.game)
